@@ -128,7 +128,6 @@
           deltaMinutiMercoledi = deltaMinutiMercoledi - 60;
           deltaOreMercoledi++;
         }
-        console.log(deltaOreMercoledi,deltaMinutiMercoledi);
         document.getElementById('tdDeltaMercoledi').classList.remove('orePositive');
         document.getElementById('tdDeltaMercoledi').classList.remove('oreNegative');
         if(deltaOreMercoledi >= 24){
