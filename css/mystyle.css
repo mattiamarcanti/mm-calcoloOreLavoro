@@ -1,0 +1,49 @@
+
+.col-sm img {
+    float: right;
+    height: 60px;
+    margin: 15px 120px 15px 15px;
+  }
+
+  .col-sm h2 {
+    float: left;
+    margin: 20px 0px 0px 80px;
+  }
+
+.inputOrario {
+    height:30%;
+    
+}
+.tbodyOre {
+    padding-top:5px;
+    background:#f6f1e4;
+}
+.tbodyTimbrate {
+    background:#faefdb8f;
+    margin-top:5px;
+}
+.tbodyExtra {
+    background:#f6f1e4;
+}
+td {
+    font-size:15px;
+    text-align:center;
+    align-items: center;
+}
+th {
+    font-size:15px;
+    text-align:center;
+    width:180px;
+}
+.tbodyTimbrate p {
+    margin-bottom:0px;
+}
+.input-qls {
+    align-items: center;
+}
+.orePositive {
+    background:#b6dbb769!important;
+}
+.oreNegative {
+ background: #d6545469!important;
+}

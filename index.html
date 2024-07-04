@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolo Orario Settimanale</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	  <link rel="shortcut icon" type="image/jpg" href="https://media.licdn.com/dms/image/C4D0BAQHwgGRLDjlVHA/company-logo_200_200/0/1630573606602/gruppo_finmatica_logo?e=2147483647&v=beta&t=npdnko6NJmBqXAuTkQv7hkkNNHWbDMQVTppZkD4pQE0"/>
+	  <link rel="stylesheet" type="text/css" href="./css/mystyle.css">
+</head>
+<body>
+    <div class="container">
+        
+        
+        <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <h2>CALCOLO ORE SETTIMALI</h2>
+              </div>
+              <div class="col-sm">
+                <img src="./image/Logo-GF.png" />
+              </div>
+            </div>
+        </div>
+
+        <table class="table table-borderless">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>LUNEDI</th>
+                    <th>MARTEDI</th>
+                    <th>MERCOLEDI</th>
+                    <th>GIOVEDI</th>
+                    <th>VENERDI</th>
+                </tr>
+            </thead>
+            <tbody class="tbodyOre">
+                    <td class="center">Ore Lavorate</td>
+                    <td class="center input-qls"><input type="text" class="form-control inputOrario" id="orelunedi" placeholder=""></td>
+                    <td class="center input-qls"><input type="text" class="form-control inputOrario" id="oremartedi" placeholder=""></td>
+                    <td class="center input-qls"><input type="text" class="form-control inputOrario" id="oremercoledi" placeholder=""></td>
+                    <td class="center input-qls"><input type="text" class="form-control inputOrario" id="oregiovedi" placeholder=""></td>
+                    <td class="center input-qls"><input type="text" class="form-control inputOrario" id="orevenerdi" placeholder=""></td>
+                </tr>
+			</tbody>
+			<tbody class="tbodyTimbrate">
+                <tr>
+                    <td>Entrata Mattina</td>
+                     <td><input type="text" class="form-control inputOrario timbratureLunedi" id="entrataMattinalunedi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario timbratureMartedi" id="entrataMattinamartedi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario timbratureMercoledi" id="entrataMattinamercoledi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario timbratureGiovedi" id="entrataMattinagiovedi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario timbratureVenerdi" id="entrataMattinavenerdi" placeholder=""></td>
+                </tr>
+				        <tr>
+                    <td>Uscita Mattina</td>
+                    <td><input type="text" class="form-control inputOrario timbratureLunedi" id="uscitaMattinalunedi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario timbratureMartedi" id="uscitaMattinamartedi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario timbratureMercoledi" id="uscitaMattinamercoledi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario timbratureGiovedi" id="uscitaMattinagiovedi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario timbratureVenerdi" id="uscitaMattinavenerdi" placeholder=""></td>
+                </tr>
+                <tr>
+                    <td>Pausa Pranzo</td>
+                    <td><p id="pausaLunedi">00.00</p></td>
+                    <td><p id="pausaMartedi">00.00</p></td>
+                    <td><p id="pausaMercoledi">00.00</p></td>
+                    <td><p id="pausaGiovedi">00.00</p></td>
+                    <td><p id="pausaVenerdi">00.00</p></td>
+                </tr>
+                <tr>
+                    <td>Entrata Pomeriggio</td>
+                    <td><input type="text" class="form-control inputOrario timbratureLunedi" id="entrataPomelunedi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario timbratureMartedi" id="entrataPomemartedi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario timbratureMercoledi" id="entrataPomemercoledi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario timbratureGiovedi" id="entrataPomegiovedi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario timbratureVenerdi" id="entrataPomevenerdi" placeholder=""></td>
+                </tr>
+                <tr>
+                    <td>Uscita Pomeriggio</td>
+                    <td><input type="text" class="form-control inputOrario timbratureLunedi" id="uscitaPomelunedi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario timbratureMartedi" id="uscitaPomemartedi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario timbratureMercoledi" id="uscitaPomemercoledi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario timbratureGiovedi" id="uscitaPomegiovedi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario timbratureVenerdi" id="uscitaPomevenerdi" placeholder=""></td>
+                </tr>
+				</tbody>
+				<tbody class="tbodyExtra">
+                <tr>
+                    <td>Ore Extra</td>
+                    <td><input type="text" class="form-control inputOrario" id="oreExtralunedi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario" id="oreExtramartedi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario" id="oreExtramercoledi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario" id="oreExtragiovedi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario" id="oreExtravenerdi" placeholder=""></td>
+                </tr>
+                <tr>
+                    <td>Ore Permesso</td>
+                    <td><input type="text" class="form-control inputOrario" id="orePermessolunedi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario" id="orePermessomartedi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario" id="orePermessomercoledi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario" id="orePermessogiovedi" placeholder=""></td>
+                    <td><input type="text" class="form-control inputOrario" id="orePermessovenerdi" placeholder=""></td>
+                </tr>
+				</tbody>
+				<tbody class="tbodyDelta">
+                <tr>
+                    <td style="background:#faefdb8f;">Totale Giornaliero</td>
+                    <td class="orePositive" id="tdOreLunedi"><p id="oreTotaliLunedi" >8.00</p></td>
+                    <td class="orePositive" id="tdOreMartedi"><p id="oreTotaliMartedi" >8.00</p></td>
+                    <td class="orePositive" id="tdOreMercoledi"><p id="oreTotaliMercoledi">8.00</p></td>
+                    <td class="orePositive" id="tdOreGiovedi"><p id="oreTotaliGiovedi">8.00</p></td>
+                    <td class="orePositive" id="tdOreVenerdi"><p id="oreTotaliVenerdi">8.00</p></td>
+                </tr>
+                <tr>
+                    <td style="background:#faefdb8f;">Delta Settimanale</td>
+                    <td class="orePositive" id="tdDeltaLunedi"><p id="deltaLunedi">0.00</p></td>
+                    <td class="orePositive" id="tdDeltaMartedi"><p id="deltaMartedi">0.00</p></td>
+                    <td class="orePositive" id="tdDeltaMercoledi"><p id="deltaMercoledi">0.00</p></td>
+                    <td class="orePositive" id="tdDeltaGiovedi"><p id="deltaGiovedi">0.00</p></td>
+                    <td class="orePositive" id="tdDeltaVenerdi"><p id="deltaVenerdi">0.00</p></td>
+                </tr>
+				</tr>
+				</tbody>
+				<tbody class="tbodyOreTotali">
+   <tr>
+                    <td style="background:#f6f1e4;">Ore Totali</td>
+					<td class="orePositive" id="tdOreTotali" colspan="5"><p id="oreTotali">40.00</p></td>
+                </tr>
+				</tbody>
+        </table>
+
+       
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="./js/myscript.js"></script>
+
+</body>
+</html>
