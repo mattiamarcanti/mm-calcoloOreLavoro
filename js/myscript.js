@@ -221,26 +221,35 @@
           (uscita2Ore * MILLISECONDS_PER_HOUR + uscita2Min * MILLISECONDS_PER_MINUTE) -
           (entrata2Ore * MILLISECONDS_PER_HOUR + entrata2Min * MILLISECONDS_PER_MINUTE)
         );
-      
-        // Convertire i millisecondi in ore e minuti
-        const oreTrascorse1 = Math.floor(tempoTrascorso1 / MILLISECONDS_PER_HOUR);
-        const minutiTrascorsi1 = Math.floor((tempoTrascorso1 % MILLISECONDS_PER_HOUR) / MILLISECONDS_PER_MINUTE);
-      
-        const oreTrascorse2 = Math.floor(tempoTrascorso2 / MILLISECONDS_PER_HOUR);
-        const minutiTrascorsi2 = Math.floor((tempoTrascorso2 % MILLISECONDS_PER_HOUR) / MILLISECONDS_PER_MINUTE);
 
-        var ore = oreTrascorse1 + oreTrascorse2;
-        var minuti = minutiTrascorsi1 + minutiTrascorsi2;
-        while(minuti > 59 ){
-          minuti = minuti - 60;
-          ore++;
+        var tempoTotale = tempoTrascorso1 + tempoTrascorso2;
+
+        var tempoPranzo = calcolaPranzoInMS(uscita1Ore, uscita1Min, entrata2Ore, entrata2Min);
+        if(tempoPranzo < 30*MILLISECONDS_PER_MINUTE){
+            tempoTotale -= 30*MILLISECONDS_PER_MINUTE - tempoPranzo;
         }
+
+        const oreTrascorse = Math.floor(tempoTotale / MILLISECONDS_PER_HOUR);
+        const minutiTrascorsi = Math.floor((tempoTotale % MILLISECONDS_PER_HOUR) / MILLISECONDS_PER_MINUTE);
       
         // Restituire il tempo trascorso in minuti e ore
         return {
-            oreLavorate: ore,
-            minutiLavorati: minuti
+            oreLavorate: oreTrascorse,
+            minutiLavorati: minutiTrascorsi
         };
+      }
+
+      function calcolaPranzoInMS(uscita1Ore, uscita1Min, entrata2Ore, entrata2Min){
+          // Convertire ore e minuti in millisecondi
+          const MILLISECONDS_PER_MINUTE = 60 * 1000;
+          const MILLISECONDS_PER_HOUR = MILLISECONDS_PER_MINUTE * 60;
+
+          // Calcolare la differenza in millisecondi
+          return (
+              (entrata2Ore * MILLISECONDS_PER_HOUR + entrata2Min * MILLISECONDS_PER_MINUTE) -
+              (uscita1Ore * MILLISECONDS_PER_HOUR + uscita1Min * MILLISECONDS_PER_MINUTE)
+          );
+
       }
 
       function calcolaPranzo(uscita1Ore, uscita1Min, entrata2Ore, entrata2Min) {
@@ -249,11 +258,14 @@
         const MILLISECONDS_PER_HOUR = MILLISECONDS_PER_MINUTE * 60;
       
         // Calcolare la differenza in millisecondi
-        const tempoPranzo = (
+        var tempoPranzo = (
           (entrata2Ore * MILLISECONDS_PER_HOUR + entrata2Min * MILLISECONDS_PER_MINUTE) -
           (uscita1Ore * MILLISECONDS_PER_HOUR + uscita1Min * MILLISECONDS_PER_MINUTE)
         );
-      
+
+        if(tempoPranzo < 30*MILLISECONDS_PER_MINUTE){
+            tempoPranzo = 30*MILLISECONDS_PER_MINUTE
+        }
         // Convertire i millisecondi in ore e minuti
         const orePranzo = Math.floor(tempoPranzo / MILLISECONDS_PER_HOUR);
         const minutiPranzo = Math.floor((tempoPranzo % MILLISECONDS_PER_HOUR) / MILLISECONDS_PER_MINUTE);
