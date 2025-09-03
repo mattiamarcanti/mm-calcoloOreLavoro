@@ -1,49 +1,152 @@
+/* Variabili CSS per i temi */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --table-bg-ore: #f6f1e4;
+    --table-bg-timbrate: #faefdb8f;
+    --table-bg-extra: #f6f1e4;
+    --table-bg-totali: #f6f1e4;
+    --table-bg-delta: #faefdb8f;
+    --positive-bg: #b6dbb769;
+    --negative-bg: #d6545469;
+    --border-color: #dee2e6;
+}
+
+/* Dark mode */
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --table-bg-ore: #2d2d2d;
+    --table-bg-timbrate: #333333;
+    --table-bg-extra: #2d2d2d;
+    --table-bg-totali: #2d2d2d;
+    --table-bg-delta: #333333;
+    --positive-bg: #4a7c59;
+    --negative-bg: #7c4a4a;
+    --border-color: #444444;
+}
+
+/* Keyframe per la rotazione continua */
+@keyframes rotateY {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Stili base */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
 .col-sm img {
     float: right;
     height: 60px;
     margin: 15px 120px 15px 15px;
-  }
+    cursor: pointer;
+    /* Rotazione continua */
+    animation: rotateY 4s linear infinite;
+}
 
-  .col-sm h2 {
+.col-sm h2 {
     float: left;
     margin: 20px 0px 0px 80px;
-  }
+}
 
 .inputOrario {
-    height:30%;
-    
+    height: 30%;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-color: var(--border-color);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
+
+.inputOrario:focus {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.table {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.table td, .table th {
+    border-color: var(--border-color);
+    transition: border-color 0.3s ease;
+}
+
 .tbodyOre {
-    padding-top:5px;
-    background:#f6f1e4;
+    padding-top: 5px;
+    background: var(--table-bg-ore);
+    transition: background-color 0.3s ease;
 }
+
 .tbodyTimbrate {
-    background:#faefdb8f;
-    margin-top:5px;
+    background: var(--table-bg-timbrate);
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
 }
+
 .tbodyExtra {
-    background:#f6f1e4;
+    background: var(--table-bg-extra);
+    transition: background-color 0.3s ease;
 }
+
+.tbodyDelta {
+    transition: background-color 0.3s ease;
+}
+
+.tbodyOreTotali {
+    transition: background-color 0.3s ease;
+}
+
 td {
-    font-size:15px;
-    text-align:center;
+    font-size: 15px;
+    text-align: center;
     align-items: center;
 }
+
 th {
-    font-size:15px;
-    text-align:center;
-    width:180px;
+    font-size: 15px;
+    text-align: center;
+    width: 180px;
 }
+
 .tbodyTimbrate p {
-    margin-bottom:0px;
+    margin-bottom: 0px;
 }
+
 .input-qls {
     align-items: center;
 }
+
 .orePositive {
-    background:#b6dbb769!important;
+    background: var(--positive-bg) !important;
+    transition: background-color 0.3s ease;
 }
+
 .oreNegative {
- background: #d6545469!important;
+    background: var(--negative-bg) !important;
+    transition: background-color 0.3s ease;
+}
+
+/* Stili specifici per dark mode per gli elementi con background inline */
+[data-theme="dark"] td[style*="background:#faefdb8f"] {
+    background: var(--table-bg-delta) !important;
+}
+
+[data-theme="dark"] td[style*="background:#f6f1e4"] {
+    background: var(--table-bg-totali) !important;
+}
+
+/* Animazione per il toggle del tema */
+.theme-transition {
+    transition: all 0.3s ease;
 }
