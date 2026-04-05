@@ -146,6 +146,19 @@ th {
     background: var(--table-bg-totali) !important;
 }
 
+/* Site Footer */
+.site-footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    color: #64748b;
+    font-size: .85rem;
+}
+.site-footer .footer-version {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .72rem;
+    opacity: 0.7;
+}
+
 /* Animazione per il toggle del tema */
 .theme-transition {
     transition: all 0.3s ease;
